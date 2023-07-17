@@ -20,6 +20,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ShoppingList'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
         '500':
           description: Internal server error
           content:
@@ -40,7 +48,7 @@ components:
           description: The raw error message from whatever error occurred in the code. May be null.
           nullable: true
           readOnly: true
-        prettymessage:
+        prettyMessage:
           type: string
           description: The error message primarily displayed to the user.
           readOnly: true
